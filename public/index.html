@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.ico" />
+    <title>Recipes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4fd97b1926.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="logo">
+                        <img src="favicon.ico" alt="website_logo"/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <nav>
+                        <ul id="menu">
+                            <div id="user-info"></div>
+                            <button id="login-btn">Login<cd/button>
+                            <button id="register-btn">Register</button>
+                            <button id="add-r-btn" style="display: none;">Add Recipe</button>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section id="home-section">
+        <div class="container">
+            <h1>Home to simple recipes</h1>
+            <section id="recipe-display-section">
+                <div class="container">
+                    <h2>Recipes</h2>
+                    <div id="recipe-grid">
+                        <!-- Recipe cards will be dynamically populated here -->
+                    </div>
+                </div>
+            </section>
+            <section id="add-recipe-section">
+                <div class="container">
+                    <h2>Add Recipe</h2>
+                    <form id="add-recipe-form">
+                        <input type="text" id="recipe-title" placeholder="Recipe Title" required>
+                        <textarea id="recipe-ingredients" placeholder="Ingredients" required></textarea>
+                        <textarea id="recipe-instructions" placeholder="Instructions" required></textarea>
+                        <input type="file" id="recipe-image" accept="image/*" required>
+                        <button type="submit">Add Recipe</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section id="login-section">
+        <div class="container">
+            <h1>Login</h1>
+            <form id="login-form">
+                <input type="text" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <a href="#register-section">Don't have an account?Register</a>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+    
+    <section id="register-section">
+        <div class="container">
+            <h1>Register</h1>
+            <form id="register-form">
+                <input type="text" id="register-username" placeholder="Username" required>
+                <input type="email" id="register-email" placeholder="Email" required>
+                <input type="password" id="register-password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Contact Us</h3>
+                    <p>Email: email@example.com</p>
+                    <p>Phone: +1234567890</p>
+                    <p>Address: 123 Street, City, Country</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Follow Us</h3>
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+        // Get username from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        if (username) {
+            // If username exists, display it with logout button
+            $('#user-info').html(`<p>Welcome, ${username}!</p><button id="logout-btn">Logout</button>`);
+               // Hide login and register buttons
+        $('#login-btn').hide();
+        $('#register-btn').hide();
+        $('#add-r-btn').show();
+        // Hide register section
+        $('#register-section').hide();
+        $('#login-section').hide();
+            // Logout functionality
+            $('#logout-btn').click(function() {
+                // Perform logout actions
+                alert('Logout successful');
+                window.location.href = '/M00912287'; // Redirect to homepage after logout
+                
+            });
+        }
+    </script>
+</body>
+</html>

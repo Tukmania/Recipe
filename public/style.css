@@ -1,0 +1,284 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.0rem;
+    margin: 0;
+    padding: 0;
+    background-color: #ffff;
+}
+
+header {
+    background: linear-gradient(to right,#F08, #ffff );
+    padding: 5px 0;
+    position: sticky;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+#menu {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#menu button {
+    background-color: #F08;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 6px 12px;
+    max-width: fit-content;
+}   
+
+#add-recipe-section {
+    margin-top: 30px;
+   display: none;
+}
+
+#add-recipe-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#add-recipe-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#recipe-title,
+#recipe-ingredients,
+#recipe-instructions {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#add-recipe-form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#add-recipe-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#recipe-display-section {
+    margin-top: 50px;
+}
+
+#recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+#recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px;
+}
+
+.recipe-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto; /* Maximum height for each card */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.recipe-card img {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.recipe-card h3 {
+    font-size: 1.2em;
+    font-weight: bold; /* Make titles bold */
+    margin-bottom: 10px;
+}
+
+.recipe-card p {
+    margin-bottom: 10px;
+}
+
+.recipe-card p.ingredients,
+.recipe-card p.instructions {
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.recipe-card p.ingredients:before,
+.recipe-card p.instructions:before {
+    content: "•"; /* Add bullet point */
+    color: #007bff; /* Bullet point color */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#recipe-list {
+    margin-top: 30px;
+}
+
+.recipe {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#add-recipe-btn,
+#logout-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-recipe-btn:hover,
+#logout-btn:hover {
+    background-color: #218838;
+}
+
+#login-section {
+    background-color: #F08;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#login-form {
+    width: 100%;
+    position: relative;
+    left: 250px;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    width: calc(100% - 50%); /* Reduce width by 20px (10px padding on each side) */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#login-form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px; /* Adjust button padding as desired */
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px; /* Adjust button max-width as desired */
+}
+
+#login-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#login-form a{  
+    color: #ffff;
+}
+
+
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+}
+
+footer h3 {
+    color: #fff;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons li a {
+    color: #fff;
+    font-size: 20px;
+}
+
+.social-icons li a:hover {
+    color: #f08;
+}
+
